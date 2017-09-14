@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Corporate AddressBook.iml" filepath="$PROJECT_DIR$/Corporate AddressBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third_party/devoquickaction/QuickAction.iml" filepath="$PROJECT_DIR$/third_party/devoquickaction/QuickAction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third_party/StickyListHeaders-dev/library/StickyListHeaders_lib.iml" filepath="$PROJECT_DIR$/third_party/StickyListHeaders-dev/library/StickyListHeaders_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/actionbarsherlock.iml" filepath="$PROJECT_DIR$/.idea/modules/actionbarsherlock.iml" />
+    </modules>
+  </component>
+</project>
