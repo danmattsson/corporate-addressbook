@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              tools:context=".CorporateContactRecordFragment">
+
+	<RelativeLayout
+			android:id="@+id/contactHeader"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			>
+
+		<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/contactPicture"
+				android:src="@drawable/ic_contact_picture"
+				android:minHeight="64dp"
+				android:minWidth="64dp"
+				android:maxHeight="96px"
+				android:maxWidth="96px"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentTop="true"
+				android:layout_marginLeft="0dp"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="-20dp"
+				android:scaleType="fitXY"/>
+
+		<View
+				android:background="@drawable/picture_overlay"
+				android:id="@+id/shaded_overlay"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:layout_alignParentTop="true"
+				android:layout_marginTop="0dp"
+				android:layout_alignBottom="@+id/contactPicture"
+				android:layout_toRightOf="@+id/contactPicture"
+				android:layout_alignRight="@+id/contactPicture"/>
+
+		<View
+				android:background="@color/holo_blue_dark"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:layout_toRightOf="@+id/shaded_overlay"
+				android:layout_alignTop="@+id/shaded_overlay"
+				android:layout_alignBottom="@+id/shaded_overlay"
+				android:id="@+id/view"
+				/>
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/dummyContactName"
+				android:id="@+id/toptext"
+				style="@style/TextAppearance.Sherlock.Widget.ActionBar.Title.Inverse"
+				android:textStyle="bold"
+				android:paddingRight="6dp"
+				android:layout_above="@+id/bottomtext"
+				android:layout_alignLeft="@+id/bottomtext"
+				android:layout_toLeftOf="@+id/saveContact"
+				android:gravity="bottom"
+				android:layout_alignTop="@+id/contactPicture"/>
+
+		<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="@string/dummyRoleAndCompany"
+				android:layout_gravity="right"
+				android:id="@+id/bottomtext"
+				style="@style/TextAppearance.Sherlock.Widget.ActionMode.Subtitle.Inverse"
+				android:password="false"
+				android:layout_toRightOf="@+id/shaded_overlay"
+				android:layout_marginLeft="6dp"
+				android:layout_marginTop="6dp"
+				android:layout_toLeftOf="@id/saveContact"
+				android:layout_alignBottom="@+id/contactPicture"
+				android:singleLine="true"
+				android:ellipsize="marquee"
+				android:layout_marginBottom="6dp"/>
+
+		<ImageButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/saveContact"
+				android:layout_alignRight="@+id/view"
+				android:layout_alignTop="@+id/contactPicture"
+				android:src="@drawable/ic_action_add_contact"
+				android:visibility="gone"
+				/>
+	</RelativeLayout>
+
+	<ListView
+			android:id="@android:id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:longClickable="true"
+			tools:listitem="@layout/detail_row"/>
+
+	<android.widget.TextView
+			android:id="@android:id/empty"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:text="@string/select_a_contact_to_view_details"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_margin="12dp"
+			android:gravity="center_horizontal"/>
+
+</LinearLayout>

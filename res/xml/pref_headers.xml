@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+	<header
+			android:id="@+id/server_heading"
+			android:title="@string/accounts"/>
+	<header
+			android:id="@+id/account_add"
+			android:icon="@drawable/ic_content_new"
+			android:title="@string/addAccount">
+		<intent
+				android:targetClass="net.vivekiyer.GAL.preferences.AddOrDeleteAccountActivity"
+				android:targetPackage="net.vivekiyer.GAL"
+				android:action="@string/ACTION_PREFS_ACCOUNT_ADD">
+		</intent>
+	</header>
+	<header
+			android:id="@+id/settings_heading"
+			android:title="@string/settings"/>
+	<header
+			android:id="@+id/settings_general"
+			android:title="@string/general"
+			android:fragment="net.vivekiyer.GAL.preferences.PrefsFragment"
+			>
+		<extra
+				android:name="pref-resource"
+				android:value="pref_general"/>
+	</header>
+	<header
+			android:fragment="net.vivekiyer.GAL.preferences.PrefsFragment"
+			android:icon="@drawable/ic_action_about"
+			android:title="@string/about_app"
+			>
+		<extra
+				android:name="pref-resource"
+				android:value="pref_about"/>
+	</header>
+</preference-headers>

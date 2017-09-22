@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/next_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/holo_blue_dark"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/next_search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/next_search"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:drawableStart="@drawable/ic_action_download"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingRight="8dp"
+        android:text="@string/next_search"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+</LinearLayout>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/next_searching_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|center_horizontal"
+    android:visibility="gone" >
+
+    <ProgressBar
+        android:id="@+id/next_progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:indeterminate="true"
+        android:padding="6dp" />
+
+    <TextView
+        android:id="@+id/next_searching"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingRight="8dp"
+        android:text="@string/retrievingResults"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+        
+</LinearLayout>
+
+</LinearLayout>

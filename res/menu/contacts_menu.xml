@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+			android:id="@+id/menu_search"
+			android:icon="@drawable/abs__ic_search"
+			android:showAsAction="ifRoom|withText|collapseActionView"
+			android:title="@string/searchDirectory"
+			android:titleCondensed="@string/search"
+			android:menuCategory="container"
+			android:orderInCategory="1"
+			/>
+	<item
+			android:id="@+id/settings"
+			android:icon="@drawable/ic_action_settings"
+			android:showAsAction="never"
+			android:title="@string/settings"
+			android:menuCategory="secondary"
+			android:orderInCategory="1000"/>
+
+</menu>

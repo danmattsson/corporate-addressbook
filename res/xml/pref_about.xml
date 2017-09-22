@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/settings" android:icon="@drawable/icon">
+    <PreferenceCategory android:title="@string/about">
+        <net.vivekiyer.GAL.preferences.VersionPreference
+		        android:summary="x.y.z" android:title="@string/version" android:enabled="false"
+            style="?android:attr/preferenceInformationStyle"
+        />
+        <net.vivekiyer.GAL.preferences.DeviceIdPreference
+		        android:summary="0123456789abcdef0123456789abcdef" android:title="@string/deviceId" android:enabled="true"
+            android:dialogMessage="@string/copyDeviceIdQuestion"
+            android:dialogTitle="@string/deviceId"
+            android:positiveButtonText="@android:string/yes"
+            android:negativeButtonText="@android:string/no"
+        />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/links">
+        <Preference android:summary="@string/googlecodeDetails" android:title="@string/googlecodeTitle" android:icon="@drawable/google_code">
+            <intent android:action="android.intent.action.VIEW"
+            	android:data="http://code.google.com/p/corporateaddressbook" >
+            </intent>
+		</Preference>
+        <Preference android:summary="@string/crowdinDetails" android:title="@string/crowdinTitle" android:icon="@drawable/crowdin">
+            <intent android:action="android.intent.action.VIEW"
+            	android:data="http://crowdin.net/project/corporate-addressbook/" >
+            </intent>
+		</Preference>
+        <Preference android:summary="@string/contactAuthorsDetails" android:title="@string/contactAuthorsTitle">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="mailto:corporateaddressbook@googlegroups.com"
+                >
+                <extra android:name="android.intent.extra.SUBJECT" android:value="Feedback for Corporate Addressbook"/>
+                <extra android:name="android.intent.extra.TEXT" android:value="\n\n------------------------\nSent from the app"/>
+            </intent>
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

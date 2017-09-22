@@ -1,0 +1,125 @@
+package net.vivekiyer.GAL.view;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import com.devoteam.quickaction.QuickActionItem;
+import net.vivekiyer.GAL.R;
+
+/**
+ * A class that can display, as a popup badge, a collection
+ * of QuickActionItems
+ * <p/>
+ * Based on the great work done by Mohd Faruq
+ */
+public class QuickActionView extends android.widget.LinearLayout {
+
+	private Context mContext = null;
+	private LayoutInflater mInflater = null;
+
+	View contentView;
+
+	private ViewGroup mTrack;
+
+	public QuickActionView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+	public QuickActionView(Context context, AttributeSet attribs) {
+		super(context, attribs);
+		initialize(context);
+	}
+
+	public QuickActionView(Context context, AttributeSet attribs, int defStyle) {
+		super(context, attribs, defStyle);
+
+		initialize(context);
+
+//		// Prepare track entrance animation
+//		mTrackAnim = AnimationUtils.loadAnimation(mContext, R.anim.quickaction);
+//		mTrackAnim.setInterpolator(new Interpolator() {
+//			public float getInterpolation(float t) {
+//				// Pushes past the target area, then snaps back into place.
+//				// Equation for graphing: 1.2-((x*1.6)-1.1)^2
+//				final float inner = (t * 1.55f) - 1.1f;
+//				return 1.2f - inner * inner;
+//			}
+//		});
+//
+//		if(isInEditMode()) {
+//			addItem(R.drawable.ic_menu_call, R.string.call, null);
+//			addItem(R.drawable.ic_menu_start_conversation, R.string.send_email, null);
+//		}
+	}
+
+	private void initialize(Context context) {
+		mContext = context;
+		mInflater = (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+
+//		setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.quickaction_slider_background));
+
+		contentView = mInflater.inflate(R.layout.quickactionview, null);
+		LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		addView(contentView, lp);
+
+		mTrack = (ViewGroup) contentView.findViewById(R.id.quickaction);
+
+		setFocusable(true);
+	}
+
+	/**
+	 * Adds an item to the QuickActionWindow
+	 *
+	 * @param drawable Icon to be shown
+	 * @param text     Label to be shown below the drawable
+	 * @param l        Definition for the callback to be invoked when the view is cliked
+	 */
+	public void addItem(Drawable drawable, String text, OnClickListener l) {
+		QuickActionItem view = (QuickActionItem) mInflater.inflate(R.layout.quickaction_item, mTrack, false);
+		view.setChecked(false);
+		view.setImageDrawable(drawable);
+		view.setText(text);
+		view.setOnClickListener(l);
+
+		final int index = mTrack.getChildCount() - 1;
+		mTrack.addView(view, index);
+	}
+
+	/**
+	 * Adds an item to the QuickActionWindow
+	 *
+	 * @param drawable Icon resource id to be shown
+	 * @param text     Label to be shown below the drawable
+	 * @param l        Definition for the callback to be invoked when the view is cliked
+	 */
+	public void addItem(int drawable, String text, OnClickListener l) {
+		addItem(mContext.getResources().getDrawable(drawable), text, l);
+	}
+
+	/**
+	 * Adds an item to the QuickActionWindow
+	 *
+	 * @param drawable Icon to be shown
+	 * @param resid    Label resource id to be shown below the drawable
+	 * @param l        Definition for the callback to be invoked when the view is cliked
+	 */
+	public void addItem(Drawable drawable, int resid, OnClickListener l) {
+		addItem(drawable, mContext.getResources().getString(resid), l);
+	}
+
+	/**
+	 * Adds an item to the QuickActionWindow
+	 *
+	 * @param drawable Icon resource id to be shown
+	 * @param resid    Label resource id to be shown below the drawable
+	 * @param l        Definition for the callback to be invoked when the view is cliked
+	 */
+	public void addItem(int drawable, int resid, OnClickListener l) {
+		addItem(mContext.getResources().getDrawable(drawable), mContext.getResources().getText(resid).toString(), l);
+	}
+}
